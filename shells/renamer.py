@@ -2,8 +2,8 @@
 # for renaming the names of pictures
 import os
 
-# dir_path=r'H:/Philosophy/pic/41/'
-dir_path=r'H:/Philosophy/pic/cos7/'
+dir_path=r'G:/Philosophy/pic/44/'
+#dir_path=r'G:/Philosophy/pic/cos7/'
 # dir_path='H:/Philosophy/comic/CGs/CG13/'
 # for i in range(10,11):
 #     affix=str(i)+'/'
