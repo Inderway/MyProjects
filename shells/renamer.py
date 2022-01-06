@@ -1,10 +1,12 @@
 # July 8, 2021
 # for renaming the names of pictures
+# -*- coding=utf8 -*-
 import os
 
-dir_path=r'G:/Philosophy/pic/44/'
-#dir_path=r'G:/Philosophy/pic/cos7/'
-# dir_path='H:/Philosophy/comic/CGs/CG13/'
+dir_path='G:/Philosophy/pic/71/'
+#dir_path='G:/Philosophy/pic/cos8/'
+#dir_path='G:/Philosophy/comic/CGs/CG16/'
+#dir_path='F:/philosophy/temp/'
 # for i in range(10,11):
 #     affix=str(i)+'/'
 #     dir_path=path+affix
