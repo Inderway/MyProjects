@@ -28,34 +28,62 @@ class ROSIpics:
         p=r'<a>共(\d+)页: </a>'
         pages=int(re.findall(p,self.html)[0])
         count=1
+        #print(self.html)
         for i in range(pages):
             #match images
-            #p=r'<img class="img-responsive" src="([^"]+\.jpg)"'
-            p=r'<img src=\'([^\']+\.jpg)\' alt='
+            p=r'<img class="img-responsive" src="([^"]+\.jpg)"'
             imglist=re.findall(p,self.html)
             #print(imglist)
+            if(len(imglist)==0 and i!=pages-1):
+                p=r'<img src=\'([^\']+\.jpg)\' alt='
+                imglist=re.findall(p,self.html)
+            if(len(imglist)==0 and i!=pages-1):
+                p=r'src="([^"]+\.jpg)" style='
+                imglist=re.findall(p,self.html)
+            if(len(imglist)==0 and i!=pages-1):
+                p=r'border="0" src="([^"]+\.jpg)" />'
+                imglist=re.findall(p,self.html)
+            if(len(imglist)==0 and i!=pages-1):
+                break
             for each in imglist:
                 filename=each.split("/")[-1]
-                photo=request.urlopen('http://www.rosimm3.com'+each)
+                photo=request.urlopen("http://www.rosimm3.com"+each)
                 w=photo.read()
-                f=open("E:\download\image\\"+str(count)+filename,'wb')
+                # image address
+                f=open("E:\download\image8\\"+str(count)+filename,'wb')
                 f.write(w)
                 f.close()
                 print(count)
                 count+=1
+                time.sleep(1)
             if(i==pages-1):
                 break
             #get url of next page
+            time.sleep(1)
             p=r'<a href=\'([^\']+\.html)\'>下一页</a>'
             next_url="http://www.rosimm3.com/disi_mm/"+re.findall(p, self.html)[0]
             print(next_url)
             self.open_url(next_url)
-            time.sleep(1)
+            
 
 
 def main():
-    rosipic=ROSIpics("http://www.rosimm3.com/disi_mm/1486.html")
-    rosipic.get_img()
+    index_url="http://www.rosimm3.com/disi_mm/list_7_1.html"
+    rosi=ROSIpics(index_url)
+    rosi.open_url(index_url)
+    time.sleep(1)
+    p=r'<a href="([^"]+\.html)">'
+    urls=re.findall(p, rosi.html)
+    length=len(urls)
+    for i in range(0,length):
+        print("now i is %d"%(i))
+        url="http://www.rosimm3.com"+urls[i]
+        rosipic=ROSIpics(url)
+        rosipic.get_img()
+        time.sleep(1)
+
+    #rosipic=ROSIpics("http://www.rosimm3.com/disi_mm/1491.html")
+    #rosipic.get_img()
 
 if __name__=='__main__':
     main()
