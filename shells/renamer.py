@@ -3,9 +3,9 @@
 # -*- coding=utf8 -*-
 import os
 
-dir_path='G:/Philosophy/pic/84/'
-
-#dir_path='G:/Philosophy/comic/CGs/CG25/'
+dir_path='H:/Philosophy/comic/CGs/CG27/'
+#dir_path='H:/Philosophy/pic/100/'
+#dir_path='H:/Philosophy/comic/CGs/CG25/'
 #dir_path='E:/download/image/'
 # for i in range(10,11):
 #     affix=str(i)+'/'
