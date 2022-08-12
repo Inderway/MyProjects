@@ -1,11 +1,9 @@
-# Jun 12, 2022
-# for catching pictures from Internet
+# Aug 8, 2022
+# for catching resources from Internet(universal version)
 # -*- coding=utf8 -*-
-
 
 from urllib import request
 import re, time
-import winsound
 
 class Pics:
     def __init__(self, url):
@@ -23,17 +21,12 @@ class Pics:
 
     def get_img(self):
         self.open_url(self.url)
-        #get pages
-        p=r'>(\d+)</a>'
         pages=int(len(re.findall(p,self.html))/2)
-        
+        count=1
         #print(self.html)
-        idx="e"
-        print("Pages: %d"%pages)
-        # TODO 改index
-        for i in range(18,pages):
-            count=1
-            print("---Page index:%d"%i)
+        idx="n"
+        print(pages)
+        for i in range(pages):
             #match images
             p=r'title="[^"]+" src="([^"]+\.jpg)"'
             imglist=re.findall(p,self.html)
@@ -46,13 +39,12 @@ class Pics:
                 f=open("E:\download\image\\"+idx+str(count)+'_'+filename+".jpg",'wb')
                 f.write(w)
                 f.close()
-                print("count: %d"%count)
+                print(count)
                 count+=1
-                #time.sleep(1)
+                time.sleep(1)
             if(i==pages-1):
                 break
             #get url of next page
-            time.sleep(1)
             p=r'<a href="([^"]+\.html)">下一页</a>'
             next_url="https://www.jpxgyw.vip/"+re.findall(p, self.html)[0]
             #print(next_url)
@@ -61,15 +53,11 @@ class Pics:
 
 
 def main():
-    index_url="https://www.xgmn.vip/Xiuren/Xiuren22775.html"
-    print(index_url)
+    index_url="https://m.swifthart.com/gl/66614514.html"
     catcher=Pics(index_url)
     catcher.open_url(index_url)
     # time.sleep(1)
     catcher.get_img()
-    # 发出长达1s的提示音
-    winsound.Beep(2000,1000)
+
 if __name__=='__main__':
     main()
-    
-
