@@ -3,8 +3,8 @@
 # -*- coding=utf8 -*-
 import os
 
-#ir_path='H:/Philosophy/comic/CGs/CG33/'
-dir_path='H:/Philosophy/pic/126/'
+dir_path='H:/Philosophy/comic/CGs/CG34/'
+#dir_path='H:/Philosophy/pic/130/'
 #dir_path='H:/Philosophy/comic/CGs/CG25/'
 #dir_path='F:/philosophy/temp/[kurokoshi you]らぶぱい 私のおっぱい好きですか/'
 # for i in range(10,11):

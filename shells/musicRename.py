@@ -1,4 +1,4 @@
-# coding: gbk
+# -*- coding=utf8 -*-
 import json
 from pymediainfo import MediaInfo
 from pprint import pprint
@@ -7,10 +7,10 @@ import os
 
 
 def songRename():
-    dir_path = 'C:\\Users\\hp\\Music\\ÒôÀÖ\\Falcom\\'
+    dir_path = 'C:\\Users\\hp\\Music\\ï¿½ï¿½ï¿½ï¿½\\Falcom\\'
     for file in os.listdir(dir_path):
         #print(dir_path + file)
-        #ÓÃ.·Ö¸ô×Ö·û´®ÖÁ¶à1´Î£¬È¡½á¹û£¨ÀàÐÍÎªlist£©µÄµÚ¶þ¸ö
+        #ï¿½ï¿½.ï¿½Ö¸ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1ï¿½Î£ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªlistï¿½ï¿½ï¿½ÄµÚ¶ï¿½ï¿½ï¿½
         format=file.split('.',1)[1]
         #print(format)
         if format!='mp3' and format!='flac':
@@ -21,7 +21,7 @@ def songRename():
         file_name=media_data['complete_name']
         name = str(media_data['file_name']+'.'+media_data['file_extension'])
         song_name = media_data['title']+'.'+media_data['file_extension']
-        #¸ñÊ½»¯Êä³ö
+        #ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½
         if name != song_name:
             print(file)
             print('-%s <<<>>> %s' %(name,song_name))
