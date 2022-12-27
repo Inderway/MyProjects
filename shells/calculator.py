@@ -10,6 +10,9 @@ while flag==1:
     for e in str.split():
         print(e)
         sum+=float(e)
+
+    # compute mean
+    # sum=sum/len(str.split())  
     print("---------\nResult: %.2f"%sum)
     f=input("Again? (y/n):")
     flag=1 if f=='y' else 0
