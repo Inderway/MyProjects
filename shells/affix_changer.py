@@ -3,11 +3,12 @@
 
 import os
 
-dir_path='E:/download/X-GQMXXM-139/X-GQMXXM-139/'
+dir_path=r'E:\download\X-FZLY-270'
+dir_path=dir_path.replace('\\','/')+'/'
 for file in os.listdir(dir_path):
-    src_name=file.split('.')[0]
-    type=file.split('.')[1]
-    dst_name=src_name+'.'+'7z'
+    dst_name=file[0:-1]
+    # src_name=file.split('.')[0]+'.'+file.split('.')[1]
+    # type=file.split('.')[-1]
+    # dst_name=src_name+'.'+'7z'
     os.rename(dir_path+file,dir_path+dst_name)
     continue
-        
