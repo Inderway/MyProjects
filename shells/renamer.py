@@ -5,8 +5,8 @@ import os
 
 #dir_path='H:/Philosophy/comic/CGs/CG34/'
 #path='H:/Philosophy/pic/'
-#dir_path='H:/Philosophy/pic/150/'
-dir_path='H:/Philosophy/comic/CGs/CG36/'
+dir_path='H:/Philosophy/pic/152/'
+#dir_path='H:/Philosophy/comic/CGs/CG36/'
 #dir_path='F:/philosophy/temp/[kurokoshi you]らぶぱい 私のおっぱい好きですか/'
 
 # <--批量
