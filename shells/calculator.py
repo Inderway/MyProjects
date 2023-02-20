@@ -7,8 +7,8 @@ while flag==1:
     str=input("Input: ")
     sum=0.0
     print("---------")
-    for e in str.split():
-        print(e)
+    for i, e in enumerate(str.split()):
+        print("%d: %s"%(i+1,e))
         sum+=float(e)
 
     # compute mean
