@@ -2,11 +2,13 @@
 # created by wei
 # Dec 1, 2022
 
-flag=1
-while flag==1:
-    str=input("Input: ")
+
+while 1:
+    str=input("Input(quit 'e'): ")
     sum=0.0
     print("---------")
+    if str=='e':
+        break
     for i, e in enumerate(str.split()):
         print("%d: %s"%(i+1,e))
         sum+=float(e)
@@ -14,5 +16,3 @@ while flag==1:
     # compute mean
     # sum=sum/len(str.split())  
     print("---------\nResult: %.4f"%sum)
-    f=input("Again? (y/n):")
-    flag=1 if f=='y' else 0
