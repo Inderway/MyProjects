@@ -8,6 +8,7 @@ import os
 from datetime import datetime
 import zipfile
 import rarfile
+import py7zr
 
 def is_zip(path:str):
     if path.split('.')[-1].lower()=='zip':
@@ -19,10 +20,15 @@ def is_rar(path:str):
         return True
     return False
 
+def is_7z(path:str):
+    if path.split('.')[-1].lower()=='7z':
+        return True
+    return False
+
 path = r"F:\Philosophy\cosplay".replace('\\','/')  # 压缩包所在目录的路径
 #path=r'F:\Philosophy\comic'.replace('\\','/')
-start_date = "2023-05-01"
-end_date = "2023-05-08"  # 压缩包创建的日期，格式为 "YYYY-MM-DD"
+start_date = "2023-06-29"
+end_date = "2023-06-29"  # 压缩包创建的日期，格式为 "YYYY-MM-DD"
 zip_num=0
 ex_num=0
 
@@ -31,12 +37,13 @@ ex_num=0
 for file_name in os.listdir(path):
     flag=0
     file_path = os.path.join(path, file_name).replace('\\','/')
-    print(file_name)
     # 判断文件类型 1: zip, 2: rar, 0: 其他
     if is_zip(file_path):
         flag=1
     elif is_rar(file_path):
         flag=2
+    elif is_7z(file_path):
+        flag=3
     if flag==0:
         continue
     #print(file_path)
@@ -46,13 +53,9 @@ for file_name in os.listdir(path):
     if file_date > end_date or file_date<start_date:
         #print(f"{file_name} is not at {end_date}")
         continue
-    print(file_date)
+    #print(file_date)
+    print(file_name)
     zip_num+=1
-    # 解压缩包
-    if flag==1:
-        zip_file=zipfile.ZipFile(file_path)
-    else:
-        zip_file=rarfile.RarFile(file_path)
     #print(file_path)
     dir_path=''.join(file_path.split('.')[:-1])
     #print(dir_path)
@@ -60,8 +63,17 @@ for file_name in os.listdir(path):
         ex_num+=1
         continue
     os.mkdir(dir_path)  
-    for names in zip_file.namelist():
-        zip_file.extract(names,dir_path)
+    # 解压缩包
+    if flag==1:
+        zip_file=zipfile.ZipFile(file_path)
+    elif flag==2:
+        zip_file=rarfile.RarFile(file_path)
+    if zip_file:
+        for name in zip_file.namelist():
+            zip_file.extract(name,dir_path)
+    if flag==3:
+        with py7zr.SevenZipFile(file_path, mode='r',) as z:
+            z.extractall(path=dir_path)
     print(f"Successfully extracted {file_path}")
     ex_num+=1
 print(f"Zip files: {zip_num}, Extracted Files: {ex_num}")
