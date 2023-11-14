@@ -27,8 +27,8 @@ def is_7z(path:str):
 
 path = r"F:\Philosophy\cosplay".replace('\\','/')  # 压缩包所在目录的路径
 #path=r'F:\Philosophy\comic'.replace('\\','/')
-start_date = "2023-06-29"
-end_date = "2023-06-29"  # 压缩包创建的日期，格式为 "YYYY-MM-DD"
+start_date = "2023-08-11"
+end_date = "2023-09-06"  # 压缩包创建的日期，格式为 "YYYY-MM-DD"
 zip_num=0
 ex_num=0
 

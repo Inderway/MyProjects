@@ -10,8 +10,8 @@ path='H:/Philosophy/pic/'
 #dir_path='F:/philosophy/temp/[kurokoshi you]らぶぱい 私のおっぱい好きですか/'
 
 # 批量
-start=173
-end=176
+start=206
+end=212
 for i in range(start,end+1):
     affix=str(i)+'/'
     dir_path=path+affix
