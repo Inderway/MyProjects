@@ -15,5 +15,5 @@ while 1:
 
     # compute mean
     # sum=sum/len(str.split())  
-    print("---------\nResult: %.4f"%sum)
+    print("---------\nResult: %.2f"%sum)
  

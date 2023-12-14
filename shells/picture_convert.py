@@ -5,6 +5,7 @@
 from PIL import Image
 import os
 
+# 运行此脚本前按更改时间排序并重命名webp文件
 path='F:/philosophy/nor/'
 for pic in os.listdir(path):
     format=pic.split('.')[-1]
