@@ -4,11 +4,11 @@
 import re
 
 
-text = r'<seg id="10">＜2日目の日本勢成績＞ 2T ／ － 9／米澤蓮 5T ／ － 5／桂川有人 12T ／ － 3／金谷拓実、中島啓太 16T ／ － 2／吉原英駿 59T／＋9／青島賢吾</seg>'
-
+# text = r'<seg id="10">＜2日目の日本勢成績＞ 2T ／ － 9／米澤蓮 5T ／ － 5／桂川有人 12T ／ － 3／金谷拓実、中島啓太 16T ／ － 2／吉原英駿 59T／＋9／青島賢吾</seg>'
+text=r'URL.125 http'
 # Define the regular expression pattern
-pattern = r"<seg id=\"\d+\">(.*)<\/seg>"
-
+# pattern = r"<seg id=\"\d+\">(.*)<\/seg>"
+pattern = r"URL\.(\d+)\s"
 # group(1) get the first result in brackets
 new_text = re.search(pattern, text)
 

@@ -42,17 +42,22 @@
 import re
 
 
-mode=['train','valid','test'][1]
+mode=['train','valid','test'][2]
 # zh_CN, de_DE, fi_FI, es_XX, ru_RU, hi_IN
-src_lan='gu_IN'
+src_lan='tr_TR'
 tgt_lan='en_XX'
-src='gu'
-year='19'
-dir_path=f'D:\\datasets\\newsdev{year}\\'
+src=src_lan[0:2]
+year='17'
+year2='17'
+dir_path=f'D:\\datasets\\newstest{year}\\'
 # dir_path='D:\\datasets\\newsdev14\\enhi_v1\\'
 
-src_path=dir_path+f'newsdev20{year}-{src}en-src.{src}.sgm'
-tgt_path=dir_path+f'newsdev20{year}-{src}en-ref.en.sgm'
+
+src_path=dir_path+f'newstest20{year}-{src}en-src.{src}.sgm'
+tgt_path=dir_path+f'newstest20{year}-{src}en-ref.en.sgm'
+# src_path=dir_path+f'newstest20{year2}-src.{src}.sgm'
+# tgt_path=dir_path+f'newstest20{year2}-ref.en.sgm'
+
 pattern = r"<seg id=\"\d+\">(.*)<\/seg>"
 with open(src_path, 'r', encoding='utf-8') as src, \
     open(tgt_path, 'r', encoding='utf-8') as tgt:
@@ -73,8 +78,6 @@ with open(src_path, 'r', encoding='utf-8') as src, \
                 tgt_w.write(sent.group(1)+'\n')
                 count_tgt+=1
         print(f"{src_lan}:{count_src}\n{tgt_lan}:{count_tgt}")
-
-
 
 
 

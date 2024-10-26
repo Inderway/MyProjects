@@ -5,7 +5,9 @@
 from PIL import Image
 import os
 
-# 运行此脚本前按更改时间排序并重命名webp文件
+# ！！！运行此脚本前按更改时间排序并重命名webp文件
+# 重命名为1即可
+
 path='F:/philosophy/nor/'
 for pic in os.listdir(path):
     format=pic.split('.')[-1]
@@ -20,6 +22,7 @@ for pic in os.listdir(path):
 for pic in os.listdir(path):
     format=pic.split('.')[-1]
     name=pic.split('.')[0]
+    print(name)
     if format=='webp':
         idx=pic.split('(')[-1].split(')')[0]
         im = Image.open(path+pic).convert("RGB")

@@ -4,18 +4,30 @@
 import os
 
 #dir_path='H:/Philosophy/comic/CGs/CG34/'
-path='H:/Philosophy/pic/'
+path='I:/philosophy_pics/pic/'
 #dir_path='H:/Philosophy/pic/153/'
-#dir_path='H:/Philosophy/comic/CGs/CG36/'
+# path='I:/philosophy_pics/comics/插画/'
 #dir_path='F:/philosophy/temp/[kurokoshi you]らぶぱい 私のおっぱい好きですか/'
 
 # 批量
-start=213
-end=215
+# Pic
+start=271
+end=279
+
+# # CG
+# start=39
+# end=41
+
+mode=0
+
 for i in range(start,end+1):
-    affix=str(i)+'/'
-    dir_path=path+affix
+    if mode==0:    
+        affix=str(i)+'/'
+    elif mode==1:
+        affix='CG'+str(i)+'/'
+        
     print(i)
+    dir_path=path+affix
 
     for pic in os.listdir(dir_path):
         src_name=pic.split('.')[0]

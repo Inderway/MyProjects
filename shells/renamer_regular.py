@@ -9,12 +9,13 @@ count=0
 def visit(path:str):
     global count
     if os.path.isfile(path):
-        os.rename(path, '.'.join(path.split('.')[:-1])+str(count)+'.'+path.split('.')[-1])
+        os.rename(path, '.'.join(path.split('.')[:-1])+'n'+str(count)+'.'+path.split('.')[-1])
         count+=1
     else:
         for subpath in os.listdir(path):
             visit(path+'/'+subpath)
     
-dir_path='D:\\download\\__未阅待同步\\xiaoze\\小泽\\小泽\\xiaoze(新白莉)'
+dir_path=r'E:\download\小女巫露娜\XZ-XNWLN-039\XZ-XNWLN-039\XZ-XNWLN-039'
+dir_path=dir_path.replace('\\','/')+'/'
 visit(dir_path)
 
