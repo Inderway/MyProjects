@@ -11,12 +11,12 @@ path='I:/philosophy_pics/pic/'
 
 # 批量
 # Pic
-start=271
-end=279
+start=280
+end=294
 
-# # CG
-# start=39
-# end=41
+# CG
+# start=43
+# end=43
 
 mode=0
 
