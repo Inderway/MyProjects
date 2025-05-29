@@ -8,7 +8,8 @@ import os
 # ！！！运行此脚本前按更改时间排序并重命名webp文件
 # 重命名为1即可
 
-path='F:/philosophy/nor/'
+# path='E:/philosophy/normal/'
+path = 'E:/download/tmp/'
 for pic in os.listdir(path):
     format=pic.split('.')[-1]
     if format=='webp':

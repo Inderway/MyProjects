@@ -15,7 +15,7 @@ def visit(path:str):
         for subpath in os.listdir(path):
             visit(path+'/'+subpath)
     
-dir_path=r'E:\download\小女巫露娜\XZ-XNWLN-039\XZ-XNWLN-039\XZ-XNWLN-039'
+dir_path=r'E:\download\网红模特\套图\套图'
 dir_path=dir_path.replace('\\','/')+'/'
 visit(dir_path)
 

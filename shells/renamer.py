@@ -4,7 +4,7 @@
 import os
 
 #dir_path='H:/Philosophy/comic/CGs/CG34/'
-path='I:/philosophy_pics/pic/'
+path='G:/philosophy_pics/pic/'
 #dir_path='H:/Philosophy/pic/153/'
 # path='I:/philosophy_pics/comics/插画/'
 #dir_path='F:/philosophy/temp/[kurokoshi you]らぶぱい 私のおっぱい好きですか/'
@@ -13,6 +13,10 @@ path='I:/philosophy_pics/pic/'
 # Pic
 start=280
 end=294
+
+# 调整
+start = 288
+end = 288
 
 # CG
 # start=43
