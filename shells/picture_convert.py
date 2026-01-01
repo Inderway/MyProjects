@@ -8,14 +8,16 @@ import os
 # ！！！运行此脚本前按更改时间排序并重命名webp文件
 # 重命名为1即可
 
-# path='E:/philosophy/normal/'
-path = 'E:/download/tmp/'
+path='E:/philosophy/normal/'
+# path = 'E:/download/tmp/'
 for pic in os.listdir(path):
     format=pic.split('.')[-1]
     if format=='webp':
         idx=pic.split('(')[-1].split(')')[0]
-        if len(idx)<3:
+        if len(idx)<4:
             if len(idx)<2:
+                idx='000'+idx
+            elif len(idx)<3:
                 idx='00'+idx
             else:
                 idx='0'+idx

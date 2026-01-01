@@ -4,24 +4,21 @@
 import os
 
 #dir_path='H:/Philosophy/comic/CGs/CG34/'
-path='G:/philosophy_pics/pic/'
+path='I:/philosophy_pics/pic/'
 #dir_path='H:/Philosophy/pic/153/'
 # path='I:/philosophy_pics/comics/插画/'
 #dir_path='F:/philosophy/temp/[kurokoshi you]らぶぱい 私のおっぱい好きですか/'
 
 # 批量
 # Pic
-start=280
-end=294
-
-# 调整
-start = 288
-end = 288
+start=340
+end=344
 
 # CG
 # start=43
 # end=43
 
+# 0为真人，1为插画
 mode=0
 
 for i in range(start,end+1):

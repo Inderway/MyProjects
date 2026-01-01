@@ -1,6 +1,7 @@
+# -*- coding=utf8 -*-
 # Dec 2, 2024
 # 用于筛选视频时记录空号
-# -*- coding=utf8 -*-
+
 
 import json
 import heapq as hq
@@ -9,7 +10,7 @@ import heapq as hq
 
 with open('video_filter.json', 'r', encoding='utf-8') as dictFile:
     dict = json.load(dictFile)
-    numberHeap = dict["number"]
+    numberHeap = dict["numbers"]
     # 小根堆化
     hq.heapify(numberHeap)
     while 1:
@@ -28,5 +29,5 @@ with open('video_filter.json', 'r', encoding='utf-8') as dictFile:
                 print("非法输入！")
 
 with open('video_filter.json', 'w', encoding='utf-8') as dictFile:
-    dict["number"] = numberHeap
+    dict["numbers"] = numberHeap
     json.dump(dict, dictFile)
